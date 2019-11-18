@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Current page is available at [http://jtsai972.github.io/clicky-game](http://jtsai972.github.io/clicky-game)
+
 ## Available Scripts
 
 In the project directory, you can run:
