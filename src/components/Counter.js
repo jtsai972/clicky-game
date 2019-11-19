@@ -8,72 +8,40 @@ class Counter extends React.Component {
     super(props);
     this.imageCardElement = React.createRef();
   }
+
+  state = { score: 0 }
+
   handleClick = () => {
     this.imageCardElement.current.changeImageState();
   };
+
   render() {
     return (
-      <div className="container">
-        {
-          images.map(image => (
+      <main>
+        <div class="scoreboard bg-secondary">
+          <div class="container py-3">
+            <div class="row"><h2>Score: {this.state.score}</h2></div>
+          </div>
+        </div>
 
-        <button 
-          key={image.key}
-          onClick={this.handleClick}
-          className="p-2 col-lg-2 col-md-3 col-sm-6"
-        >
-          <ImageCard
-            ref={this.imageCardElement}
-            src={image.src}
-            alt={image.alt}
-          />
-        </button>
-          ))
-        }
-      </div>
+        <div className="container py-3">
+          <div class="row">
+            {
+              images.map(image => (
+                <ImageCard
+                  key={image.key}
+                  ref={this.imageCardElement}
+                  src={image.src}
+                  alt={image.alt}
+                  clickEvent={this.handleClick}
+                />
+              ))
+            }
+          </div>
+        </div>
+      </main>
     );
   }
-
-  // constructor(props) {
-  //   super(props);
-  //   this.imageElement = React.createRef();
-  // }
-  // state = {
-  //   count: 0
-  // };
-
-  // handleIncrement = () => {
-  //   this.setState(
-  //     { count: this.state.count + 1 }
-  //   );
-  //   // console.log(this.imageElement.current.changeImageState);
-  //   this.imageElement.current.changeImageState();
-  // };
-
-  // render() {
-  //   return (
-  //     <div className="container">
-  //       <p>Score: {this.state.count}</p>
-  //       {
-  //         images.map(image => {
-  //           // console.log(image);
-  //           return (
-
-  //             <ImageCard
-  //               ref={this.imageElement}
-  //               key={image.key}
-  //               src={image.src}
-  //               alt={image.alt}
-  //               increment={this.handleIncrement}
-  //               // onClick={this.handleClick}
-  //             />
-  //           )
-  //         })
-  //       }
-
-  //     </div>
-  //   );
-  // }
 }
 
 export default Counter;
