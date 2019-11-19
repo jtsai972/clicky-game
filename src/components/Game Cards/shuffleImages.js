@@ -1,5 +1,3 @@
-import imageList from "./imageList";
-
 function shuffleImages(imgArr) {
   for (let i = imgArr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -9,6 +7,7 @@ function shuffleImages(imgArr) {
   return imgArr;
 }
 
-let images = shuffleImages(imageList);
+// let images = shuffleImages(imageList);
 
-export default images;
+export default shuffleImages;
+// images;
